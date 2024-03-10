@@ -51,6 +51,7 @@ const Header = () => {
 
   return (
     <div className='fixed top-0'>
+
         <div className='bg-white h-10 w-[100vw]'>
             <div className='flex justify-between mr-[5vw] ml-[5vw]'>
                 <div className='flex'>
@@ -58,13 +59,16 @@ const Header = () => {
                     <Button style={{color:'black'}} startIcon={<WhatsAppIcon style={{backgroundColor:'green',color:'white'}}/>}>+91 7305654908</Button>
                     <Button style={{color:'black'}}>Contact Us</Button>
                 </div>
+
                 <div className='flex justify-center text-center items-center'>
                     <button><SearchIcon/></button>
+                    
                     <div className='flex items-center'>
-                        <div onMouseEnter={handleCompanyOpen} onMouseLeave={handleCompanyClose} className='flex'>
+                        <div onMouseEnter={handleCompanyOpen} onMouseLeave={handleCompanyClose} className='flex cursor-pointer'>
                             <p>Company</p>
                             <ExpandMoreIcon/>
                         </div>
+
                         <div className={`border-white bg-black text-white p-2 rounded-lg ${isCompanyOpen ? 'flex flex-col' : 'hidden'} absolute top-[25%] z-10`}>
                             <ul>
                                 <li>Our Story</li>
@@ -74,6 +78,7 @@ const Header = () => {
                             </ul>
                         </div>
                     </div>
+
                     <div className='flex items-center cursor-pointer'>
                         <div onMouseEnter={handleOpen} onMouseLeave={handleClose} className='flex'>
                             <PublicIcon className='mr-2'/>
@@ -89,16 +94,19 @@ const Header = () => {
                 </div>
             </div>
         </div>
+
         <div className='bg-[#1a1a1aff] flex justify-between'>
             <div className='p-2'>
                 <button><img src={logo} alt="Logo" /></button>
             </div>
+
             <div className='flex justify-center text-white '>
                 <div className='flex justify-center items-center'>
-                    <div className='flex' onMouseEnter={handleFeaturesOpen} onMouseLeave={handleFeaturesClose}>
+                    <div className='flex cursor-pointer' onMouseEnter={handleFeaturesOpen} onMouseLeave={handleFeaturesClose}>
                         <p>Features</p>
                         <ExpandMoreIcon/>
                     </div>
+
                     <div className={`border-white bg-black text-white p-2 rounded-lg ${isFeaturesOpen ? 'flex flex-col' : 'hidden'} absolute top-[80%] z-auto`}>
                         <ul>
                             <li>Inventory Management</li>
@@ -112,14 +120,16 @@ const Header = () => {
                             <li className='text-[#e67627ff]'>See all Features</li>
                         </ul>
                     </div>
+
                 </div>
                 <button className='m-2' onClick={() => navigate('/pricing')}>Pricing</button>
-                <button className='m-2'>Customers</button>
-                <div className='flex justify-center items-center'>
+                <button className='m-2 px-2' onClick={() => navigate('/customers')}>Customers</button>
+                <div className='flex justify-center items-center cursor-pointer'>
                     <div className='flex' onMouseEnter={handleResourcesOpen} onMouseLeave={handleResourcesClose}>
                         <p>Resources</p>
                         <ExpandMoreIcon/>
                     </div>
+
                     <div className={`border-white bg-black text-white p-2 rounded-lg ${isResourcesOpen ? 'flex flex-col' : 'hidden'} absolute top-[80%] z-auto`}>
                         <ul>
                             <li>Getting Started</li>
@@ -132,8 +142,10 @@ const Header = () => {
                             <li className='text-[#e67627ff]'>All Resources</li>
                         </ul>
                     </div>
+
                 </div>
             </div>
+
             <div className='flex items-center'>
                 <Button variant='outlined' style={{color:'white',borderColor:'rgb(209,109,38)',borderRadius:'50px',marginRight:'10px'}}>Get a Demo</Button>
                 <Button variant='contained' style={{backgroundColor:'rgb(230, 118, 39)',borderRadius:'50px',marginRight:'10px'}}>Sign Up Now</Button>

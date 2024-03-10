@@ -16,15 +16,6 @@ import Facebook from '../images/facebook.png';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const Footer = () => {
-  const [isOpen, setIsOpen] = useState(false); 
-  
-  const handleOpen = () => {
-    setIsOpen(true);
-  }
-
-  const handleClose = () => {
-    setIsOpen(false);
-  }
   const  appList = [
     {
         text : "GET IT ON",
@@ -45,36 +36,36 @@ const Footer = () => {
 
   const connect = [{image:X,alt:"x"},{image:Linkedin,alt:"Linkedin"},{image:Instagram,alt:"Instagram"},{image:Youtube,alt:"Youtube"},{image:Facebook,alt:"facebook"}]
   return (
-    <div className='bg-[#1a1a1aff] absolute w-[100vw] p-5'>
+    <div className='bg-[#1a1a1aff] w-[100vw] p-5'>
+        
         <div className='text-white text-center p-2'>
             <h1 className='font-bold text-3xl m-5'>Guarantee success for your business</h1>
             <h5 className='text-gray-400 m-2'>15-day free trial. No credit card. Instant product access</h5>
             <button className='bg-[#e67627ff] p-2 m-5 rounded-full font-bold'>GET STARTED HERE</button>
+
             <div className='flex justify-between m-2'>
                 <div>
                     <MailOutlineIcon/>
                     <span className='text-[#e67627ff] pl-1'>support@zakya.com</span>
                 </div>
                 <div className='flex'>
-                    <div onMouseEnter={handleOpen} onMouseLeave={handleClose} className='flex cursor-pointer'>
                         <PublicIcon className='mr-2'/>
                         <p>English</p>
                         <ExpandMoreIcon/>
-                    </div>
-                    <div className={`border-white bg-black text-white p-2 rounded-lg ${isOpen ? 'flex flex-col' : 'hidden'} absolute right-[3%] bottom-[62%]`}>
-                        <button>Tamil</button>
-                        <button>Hindi</button>
-                    </div>
                 </div>
             </div>
+
             <hr className='border-gray-800 m-4' />
         </div>
+
         <div className='p-2'>
+
             <div className='grid text-white grid-cols-4'>
                 <div>
                     <button><img src={logo} alt="Logo" /></button>
                     <h2>Zakya is a division of Zoho Corporation, which has been in business for over 25 years in cloud software. Our customers have been the center of everything we do, and the idea for Zakya was born as an extension of that same principle.</h2>
                 </div>
+
                 <div className='p-3'>
                     <h1 className='text-[#849696ff] font-semibold'>QUICK LINKS</h1>
                     <ul className='py-3'>
@@ -92,6 +83,7 @@ const Footer = () => {
                         <li className='py-1'>Resources</li>
                     </ul>
                 </div>
+
                 <div className='py-3'>
                     <h1 className='text-[#849696ff] font-semibold'>GET STARTED NOW</h1>
                     <ul className='py-2'>
@@ -112,6 +104,7 @@ const Footer = () => {
                         <li className='py-1'>Terms</li>
                     </ul>
                 </div>
+                
                 <div className='flex flex-col items-start'>
                     <h1 className='text-[#849696ff] font-semibold'>PHONE</h1>
                     <Button style={{color:'white'}} startIcon={<PhoneIcon style={{color:'white',borderColor:'white',borderStyle:'solid',borderWidth:'2px',borderRadius:'50px',padding:'1px'}}/>}>1800 102 9944</Button>
